@@ -16,19 +16,19 @@ class SearchResultsList extends React.Component {
     const { value } = this.state;
     return (
       <div>
+        {/*language=CSS*/}
+        <style jsx global>
+          {`
+              .custom-segment {
+                  box-shadow: none !important;
+                  margin: 0 !important;
+                  border-radius: 0 !important;
+                  border-width: 1px 0 !important;
+              }
+          `}
+        </style>
         <div style={{ textAlign: 'center', width: '100%' }}>{this.props.title}</div>
         <Button.Group>
-          {/*language=CSS*/}
-          <style jsx global>
-            {`
-                .custom-segment {
-                    box-shadow: none !important;
-                    margin: 0 !important;
-                    border-radius: 0 !important;
-                    border-width: 1px 0 !important;
-                }
-            `}
-          </style>
           <Button
             onClick={this.props.clickMinus.bind(this, this.state.value)}
             icon
