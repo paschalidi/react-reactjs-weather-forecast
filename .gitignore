@@ -1,0 +1,9 @@
+# build output
+.next
+.idea
+
+# dependencies
+node_modules
+
+# logs
+*.log
