@@ -1,41 +1,34 @@
-[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/zeit/next.js/tree/master/examples/layout-component)
+## Installation
+* To manually install the project to your local machine please follow the next steps.
+    ``` sh
+    git clone https://github.com/paschalidi/react-reactjs-weather-forecast.git
+    cd react-reactjs-weather-forecast
+    npm run install
+    ```
+The above commands will install all the dependencies you need in order to run the project.
 
-# Layout component example
+In case npm run is not installed in your machine go [here](https://yarnpkg.com/lang/en/docs/install/).
 
-## How to use
+## Run
+* To run the application for developent purposes
+    ``` sh
+    npm run dev
+    ```
+* To run the application for production porpuses
+    ``` sh
+    npm run start
+    ```
+## Deploy
+* To deploy using now follow the next steps
 
-### Using `create-next-app`
+    ``` sh
+    npm run build
+    npm run start
+    ```
+    Leave the server running.
+    Open a new terminal or a tab and then run the follow command
 
-Download [`create-next-app`](https://github.com/segmentio/create-next-app) to bootstrap the example:
-
-```bash
-npx create-next-app --example layout-component layout-component-app
-# or
-yarn create next-app --example layout-component layout-component-app
-```
-
-### Download manually
-
-Download the example [or clone the repo](https://github.com/zeit/next.js):
-
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/layout-component
-cd layout-component
-```
-
-Install it and run:
-
-```bash
-npm install
-npm run dev
-```
-
-Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
-
-```bash
-now
-```
-
-## The idea behind the example
-
-This example shows a very common use case when building websites where you need to repeat some sort of layout for all your pages. Our pages are: `home`, `about` and `contact` and they all share the same `<head>` settings, the `<nav>` and the `<footer>`. Further more, the title (and potentially other head elements) can be sent as a prop to the layout component so that it's customizable in all pages.
+    ``` sh
+    now --public
+    ```
+* To delete deployed instances [here](https://zeit.co/blog/now-rm-is-here-and-more)
