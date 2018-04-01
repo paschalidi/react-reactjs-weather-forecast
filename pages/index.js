@@ -33,7 +33,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
       maxTemperature: 15,
       timeInterval: 30
     };
-    this.generateNextDataPoint.bind(this);
+    this.generateNextDataPoint();
   }
   
   generateNextDataPoint = () => {
@@ -52,8 +52,6 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
   };
   
   timstampToFormattedDate = (unix) => moment(unix).format('ddd, kk:mm:ss');
-  
-  onClick;
   
   render() {
     let chartOptions = {
