@@ -31,9 +31,9 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
       temperatureData: [props.main.temp],
       minTemperature: 10,
       maxTemperature: 15,
-      timeInterval: 10
+      timeInterval: 30
     };
-    this.generateNextDataPoint();
+    this.generateNextDataPoint.bind(this);
   }
   
   generateNextDataPoint = () => {
