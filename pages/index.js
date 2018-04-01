@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import moment from 'moment';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Header } from 'semantic-ui-react';
 import Layout from '../components/layout';
 import ButtonPlusMinusNumber from '../components/ButtonPlusMinusNumber';
 
@@ -31,7 +31,8 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
       temperatureData: [props.main.temp],
       minTemperature: 10,
       maxTemperature: 15,
-      timeInterval: 30
+      timeInterval: 30,
+      currentTimeInterval: 30
     };
     this.generateNextDataPoint();
   }
@@ -45,7 +46,8 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
       timeData,
       formattedTimeData,
       temperatureData: [...this.state.temperatureData, nextRandomTemperature],
-      lastAddedDate: nextDate
+      lastAddedDate: nextDate,
+      currentTimeInterval: this.state.timeInterval
     });
     
     setTimeout(this.generateNextDataPoint.bind(this), this.state.timeInterval * MS);
@@ -63,11 +65,7 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
         }],
         yAxes: [{
           stacked: true,
-          ticks: { min: this.timstampToFormattedDate(this.state.lastAddedDate), stepSize: 1 },
-          scaleLabel: {
-            display: true,
-            labelString: 'probability'
-          }
+          ticks: { min: this.timstampToFormattedDate(this.state.lastAddedDate), stepSize: 1 }
         }]
       }
     };
@@ -90,7 +88,18 @@ class Index extends React.Component { // eslint-disable-line react/prefer-statel
         <Grid stackable container>
           <Grid.Row centered columns={1} style={{ paddingTop: '5vw' }}>
             <Grid.Column textAlign='center'>
+              <Header as='h1'>Skuk codeing challenge</Header>
+              <Header as='h3'>Berlin weather chart</Header>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row centered columns={1} style={{ paddingTop: '5vw' }}>
+            <Grid.Column textAlign='center'>
               <LineChart data={chartData} options={chartOptions} width="800" height="400" />
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row centered columns={1}>
+            <Grid.Column textAlign='center'>
+              <Header as='h5'>Current time interval is : {this.state.currentTimeInterval} seconds</Header>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered columns={3}>
