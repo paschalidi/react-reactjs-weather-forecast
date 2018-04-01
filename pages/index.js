@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import moment from 'moment';
-import { Chart } from 'react-google-charts';
 import { Grid } from 'semantic-ui-react';
 import Layout from '../components/layout';
 import ButtonPlusMinusNumber from '../components/ButtonPlusMinusNumber';
