@@ -1,0 +1,22 @@
+{
+  "name": "layout-component",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "axios": "0.18.0",
+    "chart.js": "^1.1.1",
+    "moment": "^2.22.0",
+    "next": "5.1.0",
+    "react": "^16.3.0",
+    "react-chartjs": "1.2.0",
+    "react-dom": "^16.3.0",
+    "react-no-ssr": "1.1.0",
+    "semantic-ui-css": "2.2.12",
+    "semantic-ui-react": "0.78.3"
+  },
+  "license": "ISC"
+}
